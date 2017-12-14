@@ -41,7 +41,7 @@ class Spider:
             os.makedirs(savePath)
         fileName = "duanzi.txt"
         with open(savePath+"/" + fileName, 'a') as f:
-            print "正在保存爬取的内容到res目录下neihanduanzi文件夹中......"
+            print ("正在保存爬取的内容到res目录下neihanduanzi文件夹中......")
             f.write(content)
 
 

@@ -18,7 +18,7 @@ def captcha(captcha_data):
     return text
 
 def zhihuLogin():
-    # 构建一个Session对象，可以保存页面Cookie
+    # 用requests构建一个Session对象，可以保存页面Cookie
     sess = requests.Session()
 
     # 请求报头
