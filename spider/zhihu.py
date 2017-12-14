@@ -1,52 +1,63 @@
-# -*- coding: UTF-8 -*-
+# -*- coding:utf-8 -*-
+
 from bs4 import BeautifulSoup
 import requests
 import time
 import os
+#python3版本下 真实场景知乎登录，获取个人页信息，写入my.html文件
 
 def captcha(captcha_data):
     savePath = "./res/zhihu"
     if (os.path.exists(savePath) == False):
         os.makedirs(savePath)
-
-    with open(savePath+"/captcha.jpg", "wb") as f:
+    fileName = "captcha.jpg"
+    with open(savePath + "/" + fileName, 'wb') as f:
         f.write(captcha_data)
-    text = raw_input("看下图片验证码是多少：")
+    text = input("请输入验证码：")
+    # 返回用户输入的验证码
     return text
 
 def zhihuLogin():
-    #构建一个Session对象，可以保存页面cookie
+    # 构建一个Session对象，可以保存页面Cookie
     sess = requests.Session()
-    #请求报头
+
+    # 请求报头
     headers = {"User-Agent" : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36"}
-    #首先获取登录页面，找到post数据(_xsrf),同时记录当前网页cookie
-    html = sess.get("https://www.zhihu.com/#signin", headers=headers).text
-    #利用BeautifulSoup调用lxml解析库
-    bs = BeautifulSoup(html, 'lxml')
+
+    # 首先获取登录页面，找到需要POST的数据（_xsrf)，同时会记录当前网页的Cookie值
+    html = sess.get("https://www.zhihu.com/#signin", headers = headers).text
+    # 调用lxml解析库
+    bs = BeautifulSoup(html, "lxml")
+
     # _xsrf 作用是防止CSRF攻击（跨站请求伪造)，通常叫跨域攻击，是一种利用网站对用户的一种信任机制来做坏事
     # 跨域攻击通常通过伪装成网站信任的用户的请求(利用Cookie)，盗取用户信息、欺骗web服务器
     # 所以网站会通过设置一个隐藏字段来存放这个MD5字符串，这个字符串用来校验用户Cookie和服务器Session的一种方式
-    _xsrf = bs.find('input',attrs={"name": "_xsrf"}).get("value")
-    #构建请求验证码的url ---- https://www.zhihu.com//captcha.gif?r=1513135997867&type=login
-    captcha_url = "https://www.zhihu.com//captcha.gif?r=%d&type=login"%(time.time()*1000)
-    captcha_data = sess.get(captcha_url).text
-    print(captcha_data)
+
+    # 找到name属性值为 _xsrf 的input标签，再取出value 的值
+    _xsrf = bs.find("input", attrs={"name":"_xsrf"}).get("value")
+
+    # 根据UNIX时间戳，匹配出验证码的URL地址
+    captcha_url = "https://www.zhihu.com/captcha.gif?r=%d&type=login" % (time.time() * 1000)
+    # 发送图片的请求，获取图片数据流，
+    captcha_data = sess.get(captcha_url, headers = headers).content
+    # 获取验证码里的文字，需要手动输入
     text = captcha(captcha_data)
-    #请求数据
+
     data = {
-        "_xsrf":_xsrf,
-        "phone_num": "18344141825",
+        "_xsrf" : _xsrf,
+        "email" : "18344141825",
         "password" : "ddyt123456",
         "captcha" : text
     }
 
-    #发送请求
-    response = sess.post("", data = data, headers=headers)
-    print response.text
+    # 发送登录需要的POST数据，获取登录后的Cookie(保存在sess里)
+    response = sess.post("https://www.zhihu.com/login/phone_num", data = data, headers = headers)
+    #print response.text
 
-    #用已登录的状态Cookie发送请求获取目标页面源码
-    # response = sess.get();
-    # with open("my.html") as f:
-    #     f.write(response.text.encode("utf-8"))
-if __name__ == '__main__':
+    # 用已有登录状态的Cookie发送请求，获取目标页面源码
+    response = sess.get("https://www.zhihu.com/people/rundog/activities", headers = headers)
+    with open("my.html", "wb") as f:
+        f.write(response.text.encode("utf-8"))
+
+if __name__ == "__main__":
     zhihuLogin()
