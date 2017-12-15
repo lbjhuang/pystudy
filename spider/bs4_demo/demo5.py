@@ -1,7 +1,7 @@
 from bs4 import BeautifulSoup
 import re
 
-# 直接用select 来选择css 查找节点（相当方便，和jquery类似）
+# 直接用select 来选择css 查找节点返回的是一个列表（相当方便，和jquery类似）
 htmlStr = '<html lang="en"><head><meta charset="UTF-8"><title>Title</title></head><body><div class="num">2017121506</div><div class="time">1508110541</div><ul class="results"><li>7</li><li>0</li><li>9</li><li>6</li><li>4</li><li>5</li></ul></body></html>'
 
 html = BeautifulSoup(htmlStr, 'lxml')

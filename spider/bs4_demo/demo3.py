@@ -1,7 +1,7 @@
 from bs4 import BeautifulSoup
 import re
 
-# 寻找祖先元素，孙子元素等 find, findAll, findParent, findNextSibling, findPreviousSibling
+# 寻找祖先元素，孙子元素等 find, findAll, findParent, findNextSibling, findPreviousSibling 返回的是bs4对象
 htmlStr = '<html><head><title>Page title</title></head><body><p id="firstpara" align="center">This is paragraph<b>one</b>.</p><p id="secondpara" align="blah">This is paragraph<b>two</b>.</p></body></html>'
 
 html = BeautifulSoup(htmlStr, 'lxml')
