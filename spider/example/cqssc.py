@@ -5,6 +5,7 @@ import sched, time, re
 # 重庆时时彩   bs对象值用string, text  列表用get_text()    find 返回一个bs4对象
 s = sched.scheduler(time.time, time.sleep)  # 调度器
 
+
 def doSpider():
     response = requests.get("http://shishicai.cjcp.com.cn/")
     html = response.text
@@ -29,7 +30,7 @@ def doSpider():
             print("没有新数据......")
             return
         else:
-            data.setdefault('spider_time', time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time())))
+            data.setdefault('spider_time', time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time())))  # 加入一个爬取时间
             print("发现新数据......")
             writeResult(str(data))
     else:
