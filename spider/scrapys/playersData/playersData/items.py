@@ -10,5 +10,9 @@ import scrapy
 
 class PlayersdataItem(scrapy.Item):
     # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+    name = scrapy.Field()
+    game
+    points = scrapy.Field()
+    rebounds = scrapy.Field()
+    assist = scrapy.Field()
+
