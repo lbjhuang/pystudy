@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+#斗鱼美女图片爬虫
 import scrapy
 from douyu.items import DouyuItem
 import json
