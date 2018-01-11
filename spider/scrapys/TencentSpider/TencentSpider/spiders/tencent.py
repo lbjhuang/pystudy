@@ -18,7 +18,7 @@ class TencentSpider(CrawlSpider):
     pagelink = LinkExtractor(allow=("start=\d+"))
 
     rules = [
-        # 获取这个列表里的链接，依次发送请求，并且继续跟进，调用指定回调函数处理
+        # 获取这个列表里的链接，依次发送请求，follow=true代表继续跟进，调用指定回调函数处理
         Rule(pagelink, callback = "parseTencent", follow = True)
     ]
 
