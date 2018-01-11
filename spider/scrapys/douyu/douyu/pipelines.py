@@ -22,7 +22,7 @@ class DouyuPipeline(ImagesPipeline):    #ImagesPipeline类，实现以下两个�
     def item_complete(self, result, item, info):
         imagePath = [x['path'] for ok, x in result if ok]
 
-        os.rename(self.IMAGES_STORE + "/" + imagePath[0], self.IMAGES_STORE + "/" + item["nickname"] + ".jpg")  #重命名文件
+        os.renames(self.IMAGES_STORE + "/" + imagePath[0], self.IMAGES_STORE + "/" + item["nickname"] + ".jpg")  #重命名文件
         item["imagePath"] = self.IMAGES_STORE + "/" + item["nickname"]
 
         return item
