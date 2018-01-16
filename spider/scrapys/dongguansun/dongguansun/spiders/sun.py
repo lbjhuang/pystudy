@@ -9,6 +9,7 @@ class SunSpider(CrawlSpider):
     allowed_domains = ['wz.sun0769.com']
     start_urls = ['http://wz.sun0769.com/index.php/question/questionType?type=4&page=0']
 
+    # 爬取的正则规则
     rules = (
         Rule(LinkExtractor(allow=r'type=4&page=\d+')),
         Rule(LinkExtractor(allow=r'/html/question/\d+/\d+.html'), callback = 'parse_item')
