@@ -23,7 +23,7 @@ class SinaguideItem(scrapy.Item):
     #小类目录存放路径
     subFilename = scrapy.Field()
     #小类下面的子链接
-    sonUrls = scrapy.Field()
+    sonUrl = scrapy.Field()
     #文章标题和内容
     head = scrapy.Field()
     content = scrapy.Field()

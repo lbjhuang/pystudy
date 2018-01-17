@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 import scrapy
 import os
-import sys
 from sinaGuide.items import SinaguideItem
 
 
@@ -43,7 +42,7 @@ class sinaGuide(scrapy.Spider):
                     #存储小类url,title,filename字段数据
                     item['subTitle'] = subTitle[j]
                     item['subUrl'] = subUrl[j]       #每个小类url格式: http://news.sina.com.cn/society
-                    item['subFilename'] = parentUrl[i]
+                    item['subFilename'] = subFilename
 
                     items.append(item)   #把所有的小类的添加到大列表里面
         # 发送每个小类url的Request请求，得到Response连同包含meta数据 一同交给回调函数 second_parse 方法处理
@@ -68,7 +67,7 @@ class sinaGuide(scrapy.Spider):
                 item['subUrl'] = meta_1['subUrl']
                 item['subTitle'] = meta_1['subTitle']
                 item['subFilename'] = meta_1['subFilename']
-                item['sonUrls'] = sonUrls[i]
+                item['sonUrl'] = sonUrls[i]
                 items.append(item)
 
                 # 发送每个小类子链接的url的Request请求，得到Response连同包含meta数据 一同交给回调函数 detail_parse 方法处理得到想要的数据
@@ -80,8 +79,8 @@ class sinaGuide(scrapy.Spider):
     def detail_parse(self, response):
         item = response.meta['meta_2']
         content = ""
-        head = response.xpath("//h1[@id='main_title']/text()")
-        content_list = response.xpath("//div[@id='article']/p/text()")
+        head = response.xpath('//h1[@id="main_title"]/text()').extract()
+        content_list = response.xpath("//div[@id='artibody']/p/text()").extract()
 
         #将p标签里面的文本内容合并到一起
         for content_one in content_list:
