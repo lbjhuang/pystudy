@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Scrapy settings for douban project
+# Scrapy settings for sinaGuide project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -9,14 +9,14 @@
 #     http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 #     http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'douban'
+BOT_NAME = 'sinaGuide'
 
-SPIDER_MODULES = ['douban.spiders']
-NEWSPIDER_MODULE = 'douban.spiders'
+SPIDER_MODULES = ['sinaGuide.spiders']
+NEWSPIDER_MODULE = 'sinaGuide.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-USER_AGENT = "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0;"
+#USER_AGENT = 'sinaGuide (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
@@ -27,13 +27,13 @@ ROBOTSTXT_OBEY = True
 # Configure a delay for requests for the same website (default: 0)
 # See http://scrapy.readthedocs.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
-DOWNLOAD_DELAY = 3
+#DOWNLOAD_DELAY = 3
 # The download delay setting will honor only one of:
 #CONCURRENT_REQUESTS_PER_DOMAIN = 16
 #CONCURRENT_REQUESTS_PER_IP = 16
 
 # Disable cookies (enabled by default)
-COOKIES_ENABLED = False     #禁用cookie 【反反爬虫策略之一】
+#COOKIES_ENABLED = False
 
 # Disable Telnet Console (enabled by default)
 #TELNETCONSOLE_ENABLED = False
@@ -47,32 +47,14 @@ COOKIES_ENABLED = False     #禁用cookie 【反反爬虫策略之一】
 # Enable or disable spider middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    'douban.middlewares.DoubanSpiderMiddleware': 543,
+#    'sinaGuide.middlewares.SinaguideSpiderMiddleware': 543,
 #}
 
 # Enable or disable downloader middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
-DOWNLOADER_MIDDLEWARES = {
-    'douban.middlewares.RandomUserAgent': 100,   #指定下载中间件类，提高爬虫隐蔽性
-    'douban.middlewares.RandomProxy': 200,
-}
-
-USER_AGENTS = [
-    'Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.0)',
-    'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.2)',
-    'Opera/9.27 (Windows NT 5.2; U; zh-cn)',
-    'Opera/8.0 (Macintosh; PPC Mac OS X; U; en)',
-    'Mozilla/5.0 (Macintosh; PPC Mac OS X; U; en) Opera 8.0',
-    'Mozilla/5.0 (Linux; U; Android 4.0.3; zh-cn; M032 Build/IML74K) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30',
-    'Mozilla/5.0 (Windows; U; Windows NT 5.2) AppleWebKit/525.13 (KHTML, like Gecko) Chrome/0.2.149.27 Safari/525.13'
-]
-
-PROXIES = [
-        {"ip_port" :"121.42.140.113:16816", "user_passwd" : "mr_mao_hacker:sffqry9r"},
-        #{"ip_prot" :"121.42.140.113:16816", "user_passwd" : ""}
-        #{"ip_prot" :"121.42.140.113:16816", "user_passwd" : ""}
-        #{"ip_prot" :"121.42.140.113:16816", "user_passwd" : ""}
-]
+#DOWNLOADER_MIDDLEWARES = {
+#    'sinaGuide.middlewares.MyCustomDownloaderMiddleware': 543,
+#}
 
 # Enable or disable extensions
 # See http://scrapy.readthedocs.org/en/latest/topics/extensions.html
@@ -83,21 +65,9 @@ PROXIES = [
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-    'douban.pipelines.DoubanPipeline': 300,
+    'sinaGuide.pipelines.SinaguidePipeline': 300,
 }
-
-# MONGODB 主机名
-MONGODB_HOST = "127.0.0.1"
-
-# MONGODB 端口号
-MONGODB_PORT = 27017
-
-# 数据库名称
-MONGODB_DBNAME = "Douban"
-
-# 存放数据的表名称
-MONGODB_SHEETNAME = "doubanmovies"
-
+LOG_LEVEL = 'DEBUG'
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See http://doc.scrapy.org/en/latest/topics/autothrottle.html
 #AUTOTHROTTLE_ENABLED = True
