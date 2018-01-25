@@ -26,10 +26,12 @@ def debug2(func):
     return wrapper
 
 @debug2
-def eatFood(food):
+def eatFood(food, *args, **kwargs):
     print('I like eat '+ food)
+    for k, v in kwargs.items():
+        print('I like eat' + v)
 
-eatFood('vagetables')
+eatFood('vagetables', 'kfc', fruit='apple', drinking='pepsi')
 
 
 #补充：可变参数：当函数的参数不确定时，可以使用*args 和**kwargs，*args 没有key值，**kwargs有key值。
