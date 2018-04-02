@@ -7,7 +7,7 @@ d = {'Michael':85, 'Bob':69, 'Tracy':86}
 # print(d.get('Bob')) #获取制定键的值
 # d.pop('Bob')  #元组的弹出必须制定键名
 # print(d)
-
+print(d.items())
 
 for key in d:
     print(d[key])  #因为dict的存储不是按照list的方式顺序排列，所以，迭代出的结果顺序很可能不一样。
