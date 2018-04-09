@@ -8,11 +8,11 @@ class Test(object):
         print("InstanceFun")
         print(self)
 
-    @classmethod
+    @classmethod         #类方法只能调用类变量，不能访问实例变量
     def ClassFun(cls):
         print("ClassFun")
         print(cls)
-
+    #类静态方法实际上和类没啥关系，视为一个公共的普通函数，不需要传递self，也操作不来self
     @staticmethod
     def StaticFun():
         print("StaticFun")
@@ -38,5 +38,5 @@ t.ClassFun(Test)                      # 错误   classFun() takes exactly 1 argu
 
 #实例方法只能被实例对象调用，静态方法(由@staticmethod装饰的方法)、类方法(由@classmethod装饰的方法)，可以被类或类的实例对象调用。
 #实例方法，第一个参数必须要默认传实例对象，一般习惯用self。
-#静态方法，参数没有要求。
+#静态方法，参数没有要求，实际上和类没什么关系，可以说是类中的一个公共的普通方法，也调用不来实例变量。
 #类方法，第一个参数必须要默认传类，一般习惯用cls。
