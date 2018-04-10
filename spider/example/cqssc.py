@@ -1,6 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
-import sched, time, re
+import sched, time, re, datetime
 
 # 重庆时时彩   bs对象值用string, text  列表用get_text()    find 返回一个bs4对象
 s = sched.scheduler(time.time, time.sleep)  # 调度器
@@ -10,7 +10,7 @@ def doSpider():
     response = requests.get("http://shishicai.cjcp.com.cn/")
     html = response.text
     if (html):
-        print("正在爬取重庆时时彩......")
+        print("%s 正在爬取重庆时时彩......" % time.strftime('%Y-%m-%d %H:%M:%S',time.localtime(time.time())))
         soup = BeautifulSoup(html, 'lxml')
         divs = soup.findAll('div', attrs={'class', 'ssc_kj_con'})  # findAll 是一个列表, 里面每个元素都是一个bs4对象
         div = divs[0]
@@ -31,8 +31,10 @@ def doSpider():
             return
         else:
             data.setdefault('spider_time', time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time())))  # 加入一个爬取时间
-            print("发现新数据......")
+            print('##########################################')
+            print("#    %s  发现新数据     #" % time.strftime('%Y-%m-%d %H:%M:%S',time.localtime(time.time())))
             writeResult(str(data))
+            return
     else:
         print("网络不稳定，重试中......")
 
@@ -46,16 +48,19 @@ def readResult():
 def writeResult(data):
     with open('cqssc.txt', 'a+') as f:
         f.write(data + '\n')
-        print("已将新数据添加到cqssc.txt文件中")
+        print("#    已将新数据添加到cqssc.txt文件中     #")
+        print('##########################################')
 
 
 def eventIt():
     doSpider()
-    s.enter(1, 0, eventIt, ())  # 自调用：因为要求要循环执行，但单个s.enter()只能算个延迟函数，运行一次就没了，所以我们在调用函数里面再启动一个s.enter()，完成循环。
+    s.enter(120, 0, eventIt, ())  # 200s后自调用：因为要求要循环执行，但单个s.enter()只能算个延迟函数，运行一次就没了，所以我们在调用函数里面再启动一个s.enter()，完成循环。
 
 
 def actionSpider():
-    s.enter(2, 1, eventIt, ())  # 3s 延迟执行
+    if (2 <= datetime.datetime.now().hour < 9):
+        return
+    s.enter(10, 1, eventIt, ())  # 10s延迟执行
     s.run()  # 运行
 
 

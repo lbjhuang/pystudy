@@ -9,10 +9,11 @@ class Student(object):
     def __del__(self):
         print('析构方法，实例化后自动执行')
 
+
 paul = Student('paul', 99)
 #print(paul.name)  #无法获取类的私有属性，只能通过公有方法获取
 paul.get_score()
 paul.hobby = 'basketball'
 print(paul.hobby)
-print(isinstance(paul, Student))
+print(isinstance(paul, Student))  #是否是Student实例
 print(dir(paul))

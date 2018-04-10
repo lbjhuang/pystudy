@@ -10,7 +10,7 @@ def doSpider():
     response = requests.get("http://www.bwlc.net/")
     html = response.text
     if (html):
-        print("正在爬取北京PK10......")
+        print("%s  正在爬取北京PK10......" % time.strftime('%Y-%m-%d %H:%M:%S',time.localtime(time.time())))
         soup = BeautifulSoup(html, 'lxml')
         div = soup.select('.g_last')  # 通过类查找div
         divSoup = BeautifulSoup(str(div[0]), 'lxml')
@@ -49,7 +49,7 @@ def writeResult(data):
 
 def eventIt():
     doSpider()
-    s.enter(5, 0, eventIt, ())  # 自调用：因为要求要循环执行，但单个s.enter()只能算个延迟函数，运行一次就没了，所以我们在调用函数里面再启动一个s.enter()，完成循环。
+    s.enter(120, 0, eventIt, ())  # 120s后自调用：因为要求要循环执行，但单个s.enter()只能算个延迟函数，运行一次就没了，所以我们在调用函数里面再启动一个s.enter()，完成循环。
 
 
 def actionSpider():
