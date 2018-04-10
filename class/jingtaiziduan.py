@@ -15,6 +15,7 @@ class Province:
     def show(self):
         print(self.name)
 
+
 hunan = Province("湖南")
 jiangxi = Province("江西")
 
