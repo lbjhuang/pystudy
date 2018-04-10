@@ -28,7 +28,7 @@ class E(B,C,D):
     def __init__(self):
         print('来到了E')
         super(E, self).__init__()
-    print('离开了E')
+        print('离开了E')
 
 e = E()
 print(e.__class__.__mro__)

@@ -30,5 +30,7 @@ class E(B,C,D):
         B.__init__(self)
         C.__init__(self)
         D.__init__(self)
-    print('离开了E')
+        print('离开了E')
+
+e = E()
 
