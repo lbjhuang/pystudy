@@ -1,6 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import sched, time, re, datetime
+from mysqlTool.Tool import *
 
 # 重庆时时彩   bs对象值用string, text  列表用get_text()    find 返回一个bs4对象
 s = sched.scheduler(time.time, time.sleep)  # 调度器
@@ -23,7 +24,7 @@ def doSpider():
         open_time = pattern.match(open_time_text).group(1)  # 匹配开奖时间
         number = pattern.match(open_number_text).group(1)  # 匹配开奖号码
         number = number.replace(' ', ',')
-        data = {'open_num': open_num, 'number': number, 'open_time': open_time}  # 添加开奖时间数据到字典
+        data = {'open_number': open_num, 'number': number, 'open_time': open_time}  # 添加开奖时间数据到字典
 
         exists_data = readResult()  # 已存在的数据
         if (str(data).rstrip('}') in exists_data):  # 爬到的数据是否存在，否则写入
@@ -33,7 +34,10 @@ def doSpider():
             data.setdefault('spider_time', time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time())))  # 加入一个爬取时间
             print('##########################################')
             print("#    %s  发现新数据     #" % time.strftime('%Y-%m-%d %H:%M:%S',time.localtime(time.time())))
+            #写入文件
             writeResult(str(data))
+            #写入数据库
+            writToMysql(data)
             return
     else:
         print("网络不稳定，重试中......")
@@ -49,8 +53,12 @@ def writeResult(data):
     with open('cqssc.txt', 'a+') as f:
         f.write(data + '\n')
         print("#    已将新数据添加到cqssc.txt文件中     #")
-        print('##########################################')
 
+def writToMysql(data):
+    toolObj = Cqssc()
+    toolObj.insertData(data)
+    print("#    已将新数据添加到数据库              #")
+    print('##########################################')
 
 def eventIt():
     doSpider()
@@ -58,7 +66,7 @@ def eventIt():
 
 
 def actionSpider():
-    if (2 <= datetime.datetime.now().hour < 9):
+    if (2 <= datetime.datetime.now().hour < 9):   #凌晨2点到九点不开号码
         return
     s.enter(10, 1, eventIt, ())  # 10s延迟执行
     s.run()  # 运行
