@@ -10,8 +10,8 @@ Base = declarative_base()    #生成orm基类
 class Cqssc(Base):
     __tablename__ = "cqssc"
     id = Column(Integer, primary_key=True)
-    open_number = Column(Integer)
-    number = Column(Integer)
+    open_number = Column(String(15))
+    number = Column(String(10))
     open_time = Column(String(30))
     spider_time = Column(String(30))
 
