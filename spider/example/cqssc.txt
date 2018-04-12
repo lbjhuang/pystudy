@@ -14,3 +14,10 @@
 {'open_number': '20180411092', 'number': '6,2,5,7,2', 'open_time': '2018-04-11 21:21', 'spider_time': '2018-04-11 21:23:50'}
 >>>>>>> 58e3d9e87275d994595dd23f93b3245ecf18fd97
 {'open_number': '20180412063', 'number': '3,6,3,6,3', 'total': 21, 'open_time': '2018-04-12 16:31', 'spider_time': '2018-04-12 16:35:57'}
+{'open_number': '20180412064', 'number': '9,8,9,5,1', 'total': 32, 'open_time': '2018-04-12 16:41', 'spider_time': '2018-04-12 16:44:00'}
+{'open_number': '20180412065', 'number': '7,9,6,4,6', 'total': 32, 'open_time': '2018-04-12 16:51', 'spider_time': '2018-04-12 16:53:49'}
+{'open_number': '20180412066', 'number': '9,6,0,3,2', 'total': 20, 'open_time': '2018-04-12 17:01', 'spider_time': '2018-04-12 17:03:58'}
+{'open_number': '20180412067', 'number': '6,7,3,5,5', 'total': 26, 'open_time': '2018-04-12 17:11', 'spider_time': '2018-04-12 17:13:51'}
+{'open_number': '20180412068', 'number': '5,5,2,0,9', 'total': 21, 'open_time': '2018-04-12 17:21', 'spider_time': '2018-04-12 17:24:06'}
+{'open_number': '20180412069', 'number': '4,4,4,2,5', 'total': 19, 'open_time': '2018-04-12 17:31', 'spider_time': '2018-04-12 17:34:21'}
+{'open_number': '20180412070', 'number': '2,4,3,8,2', 'total': 19, 'open_time': '2018-04-12 17:41', 'spider_time': '2018-04-12 17:43:56'}

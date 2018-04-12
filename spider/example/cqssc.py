@@ -65,7 +65,7 @@ def writToMysql(data):
 
 def eventIt():
     doSpider()
-    s.enter(120, 0, eventIt, ())  # 200s后自调用：因为要求要循环执行，但单个s.enter()只能算个延迟函数，运行一次就没了，所以我们在调用函数里面再启动一个s.enter()，完成循环。
+    s.enter(100, 0, eventIt, ())  # 200s后自调用：因为要求要循环执行，但单个s.enter()只能算个延迟函数，运行一次就没了，所以我们在调用函数里面再启动一个s.enter()，完成循环。
 
 
 def actionSpider():
