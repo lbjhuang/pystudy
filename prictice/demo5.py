@@ -6,7 +6,7 @@ def output(s, l):
     print (s[l-1])
     output(s, l-1)
 
-s = raw_input("请输入一个字符串：")
+s = input("请输入一个字符串：")
 
 l = len(s)
 output(s, l)

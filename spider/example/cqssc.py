@@ -3,9 +3,9 @@ from bs4 import BeautifulSoup
 import sched, time, re, datetime
 from mysqlTool.Tool import *
 
+
 # 重庆时时彩   bs对象值用string, text  列表用get_text()    find 返回一个bs4对象
 s = sched.scheduler(time.time, time.sleep)  # 调度器
-
 
 def doSpider():
     response = requests.get("http://shishicai.cjcp.com.cn/")
@@ -24,7 +24,10 @@ def doSpider():
         open_time = pattern.match(open_time_text).group(1)  # 匹配开奖时间
         number = pattern.match(open_number_text).group(1)  # 匹配开奖号码
         number = number.replace(' ', ',')
-        data = {'open_number': open_num, 'number': number, 'open_time': open_time}  # 添加开奖时间数据到字典
+        total = 0
+        for item in number.split(','):
+            total += int(item)
+        data = {'open_number': open_num, 'number': number, 'total': total, 'open_time': open_time}  # 添加开奖时间数据到字典
 
         exists_data = readResult()  # 已存在的数据
         if (str(data).rstrip('}') in exists_data):  # 爬到的数据是否存在，否则写入
