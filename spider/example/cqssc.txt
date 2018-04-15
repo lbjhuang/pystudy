@@ -1,23 +1,22 @@
-<<<<<<< HEAD
-{'open_number': '20180412062', 'number': '3,9,3,0,5', 'total': 20, 'open_time': '2018-04-12 16:21', 'spider_time': '2018-04-12 16:27:53'}
-=======
-{'open_number': '20180411082', 'number': '8,3,9,0,8', 'open_time': '2018-04-11 19:41', 'spider_time': '2018-04-11 19:44:03'}
-{'open_number': '20180411083', 'number': '5,0,7,9,4', 'open_time': '2018-04-11 19:51', 'spider_time': '2018-04-11 19:54:07'}
-{'open_number': '20180411084', 'number': '8,8,9,2,5', 'open_time': '2018-04-11 20:01', 'spider_time': '2018-04-11 20:02:10'}
-{'open_number': '20180411085', 'number': '0,1,2,2,2', 'open_time': '2018-04-11 20:11', 'spider_time': '2018-04-11 20:12:13'}
-{'open_number': '20180411086', 'number': '0,7,1,0,8', 'open_time': '2018-04-11 20:21', 'spider_time': '2018-04-11 20:22:17'}
-{'open_number': '20180411087', 'number': '7,6,2,6,3', 'open_time': '2018-04-11 20:31', 'spider_time': '2018-04-11 20:32:22'}
-{'open_number': '20180411088', 'number': '2,3,6,9,8', 'open_time': '2018-04-11 20:41', 'spider_time': '2018-04-11 20:44:28'}
-{'open_number': '20180411089', 'number': '8,5,2,2,0', 'open_time': '2018-04-11 20:51', 'spider_time': '2018-04-11 20:54:32'}
-{'open_number': '20180411090', 'number': '5,1,5,1,4', 'open_time': '2018-04-11 21:01', 'spider_time': '2018-04-11 21:04:36'}
-{'open_number': '20180411091', 'number': '3,4,4,6,3', 'open_time': '2018-04-11 21:11', 'spider_time': '2018-04-11 21:13:46'}
-{'open_number': '20180411092', 'number': '6,2,5,7,2', 'open_time': '2018-04-11 21:21', 'spider_time': '2018-04-11 21:23:50'}
->>>>>>> 58e3d9e87275d994595dd23f93b3245ecf18fd97
-{'open_number': '20180412063', 'number': '3,6,3,6,3', 'total': 21, 'open_time': '2018-04-12 16:31', 'spider_time': '2018-04-12 16:35:57'}
-{'open_number': '20180412064', 'number': '9,8,9,5,1', 'total': 32, 'open_time': '2018-04-12 16:41', 'spider_time': '2018-04-12 16:44:00'}
-{'open_number': '20180412065', 'number': '7,9,6,4,6', 'total': 32, 'open_time': '2018-04-12 16:51', 'spider_time': '2018-04-12 16:53:49'}
-{'open_number': '20180412066', 'number': '9,6,0,3,2', 'total': 20, 'open_time': '2018-04-12 17:01', 'spider_time': '2018-04-12 17:03:58'}
-{'open_number': '20180412067', 'number': '6,7,3,5,5', 'total': 26, 'open_time': '2018-04-12 17:11', 'spider_time': '2018-04-12 17:13:51'}
-{'open_number': '20180412068', 'number': '5,5,2,0,9', 'total': 21, 'open_time': '2018-04-12 17:21', 'spider_time': '2018-04-12 17:24:06'}
-{'open_number': '20180412069', 'number': '4,4,4,2,5', 'total': 19, 'open_time': '2018-04-12 17:31', 'spider_time': '2018-04-12 17:34:21'}
-{'open_number': '20180412070', 'number': '2,4,3,8,2', 'total': 19, 'open_time': '2018-04-12 17:41', 'spider_time': '2018-04-12 17:43:56'}
+{'open_number': '20180413094', 'number': '0,3,3,3,1', 'total': 10, 'open_time': '2018-04-13 21:41', 'spider_time': '2018-04-13 21:44:34'}
+{'open_number': '20180413095', 'number': '1,9,3,5,7', 'total': 25, 'open_time': '2018-04-13 21:51', 'spider_time': '2018-04-13 21:52:11'}
+{'open_number': '20180413096', 'number': '5,3,2,6,1', 'total': 17, 'open_time': '2018-04-13 22:01', 'spider_time': '2018-04-13 22:02:20'}
+{'open_number': '20180413097', 'number': '3,5,9,4,4', 'total': 25, 'open_time': '2018-04-13 22:06', 'spider_time': '2018-04-13 22:08:15'}
+{'open_number': '20180413098', 'number': '4,5,7,9,4', 'total': 29, 'open_time': '2018-04-13 22:11', 'spider_time': '2018-04-13 22:12:29'}
+{'open_number': '20180413099', 'number': '8,5,9,4,2', 'total': 28, 'open_time': '2018-04-13 22:16', 'spider_time': '2018-04-13 22:18:24'}
+{'open_number': '20180413100', 'number': '5,6,6,9,2', 'total': 28, 'open_time': '2018-04-13 22:21', 'spider_time': '2018-04-13 22:21:47'}
+{'open_number': '20180413101', 'number': '0,0,0,2,5', 'total': 7, 'open_time': '2018-04-13 22:26', 'spider_time': '2018-04-13 22:30:14'}
+{'open_number': '20180413102', 'number': '2,7,8,8,1', 'total': 26, 'open_time': '2018-04-13 22:31', 'spider_time': '2018-04-13 22:31:58'}
+{'open_number': '20180413103', 'number': '0,4,9,8,3', 'total': 24, 'open_time': '2018-04-13 22:36', 'spider_time': '2018-04-13 22:40:25'}
+{'open_number': '20180413104', 'number': '0,8,9,3,5', 'total': 25, 'open_time': '2018-04-13 22:41', 'spider_time': '2018-04-13 22:42:07'}
+{'open_number': '20180413105', 'number': '9,8,2,9,7', 'total': 35, 'open_time': '2018-04-13 22:46', 'spider_time': '2018-04-13 22:48:03'}
+{'open_number': '20180413106', 'number': '9,0,3,5,0', 'total': 17, 'open_time': '2018-04-13 22:51', 'spider_time': '2018-04-13 22:52:16'}
+{'open_number': '20180413107', 'number': '5,0,1,4,0', 'total': 10, 'open_time': '2018-04-13 22:56', 'spider_time': '2018-04-13 22:58:11'}
+{'open_number': '20180413108', 'number': '0,4,7,3,5', 'total': 19, 'open_time': '2018-04-13 23:01', 'spider_time': '2018-04-13 23:02:25'}
+{'open_number': '20180413109', 'number': '7,7,7,6,0', 'total': 27, 'open_time': '2018-04-13 23:06', 'spider_time': '2018-04-13 23:08:23'}
+{'open_number': '20180413110', 'number': '1,4,6,8,0', 'total': 19, 'open_time': '2018-04-13 23:11', 'spider_time': '2018-04-13 23:11:46'}
+{'open_number': '20180413111', 'number': '7,7,2,9,1', 'total': 26, 'open_time': '2018-04-13 23:16', 'spider_time': '2018-04-13 23:18:32'}
+{'open_number': '20180413112', 'number': '0,1,6,8,9', 'total': 24, 'open_time': '2018-04-13 23:21', 'spider_time': '2018-04-13 23:21:55'}
+{'open_number': '20180413113', 'number': '9,3,5,4,2', 'total': 23, 'open_time': '2018-04-13 23:26', 'spider_time': '2018-04-13 23:27:50'}
+{'open_number': '20180413114', 'number': '0,7,5,4,7', 'total': 23, 'open_time': '2018-04-13 23:31', 'spider_time': '2018-04-13 23:32:03'}
+{'open_number': '20180413115', 'number': '3,5,4,0,0', 'total': 12, 'open_time': '2018-04-13 23:36', 'spider_time': '2018-04-13 23:37:59'}
