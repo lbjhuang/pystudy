@@ -31,5 +31,5 @@ print(sum)
 print(list(map(lambda x: x * x, [1, 2, 3, 4, 5, 6, 7, 8, 9])))
 
 dict1 = {"hobby":"basketball", "name":"sam"}
-print(dict1.get("hobbys")) #None  #字典在get# 取值的时候如果不存在的键则会输出None
-#print(dict1['hobbys']) #报错 而如果用dic['hobbys']的键的方式，则会这个键不存在时会报错
+print(dict1.get("hobbys")) #None  #字典在get 键不存在时则会输出None
+print(dict1['hobbys']) #报错       dic1['hobbys']的键的方式，键不存在时会报错

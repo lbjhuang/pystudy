@@ -3,7 +3,6 @@
 
 class Test(object):
 
-
     def InstanceFun(self):
         print("InstanceFun")
         print(self)

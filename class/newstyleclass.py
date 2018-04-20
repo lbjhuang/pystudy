@@ -6,6 +6,7 @@ class A:
         self.name = name
         print(self.name + '来到了A')
 
+
     def talk(self):
         print('%s is talking with A now ' % self.name)
 
@@ -36,11 +37,11 @@ e.talk()
 
 ##############结果#############
 
-#James来到了A
-#James来到了C
-#James来到了B
-#James来到了E
-#James is talking with C now
+# James来到了A
+# James来到了C
+# James来到了B
+# James来到了E
+# James is talking with C now
 
 ##############结果#############
 
