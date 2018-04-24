@@ -23,4 +23,4 @@ def say():
     print('say')
     return "hello world"
 ret = say()
-print(ret)   #<b><li>hello world</li><b>  先执行最近的装饰器，把say返回的hello world用li标签装好，在在执行远一点添加b标签
+print(ret)   #<b><li>hello world</li><b>  先执行最近的装饰器的效果，把say返回的hello world用li标签装好，在在执行远一点添加b标签的装饰器效果
