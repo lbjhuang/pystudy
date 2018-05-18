@@ -4,7 +4,7 @@ import json
 
 s = '{"age":"11", "his":"22", "sam":"44"}'
 j = json.loads(s)   #把字符串转成python基本数据类型dict
-print(type(j))
+print(type(j))  #<class 'dict'>
 print(j)
 
 s1 = {"age":"11", "his":"22", "sam":"44"}

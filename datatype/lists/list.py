@@ -45,6 +45,6 @@ print(l5)
 # print(lst[-2:-1])
 # print(lst[:3])
 # print(lst[-2])
-print(l5[1:5:2])  #取1到4的值，步长位2
+print(l5[1:5:2])  #取1到4的值，步长位2  ['seven', 'one']
 
 

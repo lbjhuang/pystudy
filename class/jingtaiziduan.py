@@ -7,7 +7,6 @@ class Province:
 
     def __init__(self, name):
         temp = "你好"
-        # 普通字段--- 对象中
         self.name = name
         # self.country = "中国"   共有的字段没必要再对象中去申明，直接在类里面即可
 

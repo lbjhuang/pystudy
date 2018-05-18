@@ -11,7 +11,7 @@ print(res)
 #去掉列表中空字符串元素  （''和None视为false，丢弃）
 def not_empty(s):
     return s and s.strip()
-res = list(filter(not_empty, ['a', '', 'b', None, 'c', ' ']))
+res = list(filter(not_empty, ['a', '', 'b', None, 'c', '    ']))
 print(res)
 
 

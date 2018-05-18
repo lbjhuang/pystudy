@@ -14,4 +14,5 @@ for key in dic:
 
 li = [1,5,8,6,9]
 b = iter(li)    #iter()函数可以把字符串列表等转成可迭代器b
-print(next(b))
+print(next(b))  #1
+print(next(b))  #5

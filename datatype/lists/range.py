@@ -13,5 +13,5 @@ for i in number:
     else:
         dic["k2"].append(i)
 
-print(number)
+print(dic)
 
