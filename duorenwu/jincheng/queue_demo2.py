@@ -3,6 +3,7 @@ from multiprocessing import Process, Queue
 import os, time, random
 
 
+#进程中的通信：不同进程间内存是不共享的，要想实现两个进程间的数据交换，可以用以下方法。
 def write(q):
     for value in ['Before','Now','After']:
         print("加入数组元素%s在队列中"%value)
@@ -20,7 +21,7 @@ def read(q):
 
 if __name__ == '__main__':
     q = Queue()
-    pw = Process(target=write, args=(q,))  #创建两个进程，一个写入一个读取
+    pw = Process(target=write, args=(q,))  #创建两个进程，一个写入一个读取，就是把主进程的q传入过去
     pr = Process(target=read, args=(q,))
     #启动子进程pw，写入
     pw.start()
